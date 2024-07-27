@@ -2,7 +2,7 @@ from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 
-incoming_msg = request.values.get('Body', '').lower()
+incoming_msg = request.values.get('Body', '').lower() # Receive message from user
 
 response = MessagingResponse()
 msg = response.message()
