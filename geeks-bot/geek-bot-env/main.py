@@ -1,4 +1,5 @@
 from flask import Flask, request
+from googlesearch import search
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 
@@ -27,4 +28,10 @@ def bot():
 
     # displaying result
     msg = response.msg(f"--- Results for '{user_msg}' ---")
+    for result in search_results:
+        msg = response.message(result)
+    
+    return str(response)
+
+
 
