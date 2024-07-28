@@ -6,8 +6,13 @@ incoming_msg = request.values.get('Body', '').lower() # Receive message from use
 
 response = MessagingResponse()
 msg = response.message()
-msg.body('this is the response/reply  from the bot.')
+msg.body('this is the response/reply from the bot.')
 
 # chatbot logic
 def bot():
+    # user input
     user_msg = request.values.get('Body', '').lower()
+
+    # creating object of MessagingResponse
+    response = MessagingResponse
+    
