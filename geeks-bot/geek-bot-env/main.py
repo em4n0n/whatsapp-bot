@@ -15,4 +15,9 @@ def bot():
 
     # creating object of MessagingResponse
     response = MessagingResponse
-    
+
+    # User Query
+    q = user_msg + "google.com"
+
+    # list to store urls
+    result = []
