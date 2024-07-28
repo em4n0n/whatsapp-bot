@@ -21,3 +21,10 @@ def bot():
 
     # list to store urls
     result = []
+
+    for i in search(q, tld='co.in', num=6, stop=6, pause=2):
+        result.append(i)
+
+    # displaying result
+    msg = response.msg(f"--- Results for '{user_msg}' ---")
+
