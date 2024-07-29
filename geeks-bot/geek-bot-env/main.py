@@ -3,6 +3,7 @@ from googlesearch import search
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 
+app = Flask(__name__)
 incoming_msg = request.values.get('Body', '').lower() # Receive message from user
 
 response = MessagingResponse()
@@ -28,10 +29,13 @@ def bot():
 
     # displaying result
     msg = response.msg(f"--- Results for '{user_msg}' ---")
-    for result in search_results:
+    for result in search:
         msg = response.message(result)
     
     return str(response)
+
+if __name__ == "__main__":
+    app.run()
 
 
 
